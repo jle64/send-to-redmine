@@ -28,10 +28,17 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-// Run all the http requests concurrently.
-chrome.tabs.getSelected(null,function(tab) {
-	document.getElementById("description").innerText += "\n\n\n\n\"" + tab.title + "\":" + tab.url;
-});
+function getTabsInfo(tabs) {
+  for (const tab of tabs) {
+    document.getElementById("description").innerText += "\n\n\n\n\"" + tab.title + "\":" + tab.url;
+  }
+}
+
+function onError(error) {
+  console.error(`Error: ${error}`);
+}
+
+chrome.tabs.query({active: true}).then(getTabsInfo, onError);
 
 document.getElementById("form").onsubmit = function() {
 	var subject = document.getElementById("subject").value;

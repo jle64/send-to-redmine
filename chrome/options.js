@@ -28,6 +28,27 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+const permissionsToRequest = {
+  origins: ["https://*/"],
+};
+
+async function requestPermissions() {
+  function onResponse(response) {
+    if (response) {
+      console.log("Permission was granted");
+    } else {
+      console.log("Permission was refused");
+    }
+    return browser.permissions.getAll();
+  }
+
+  const response = await browser.permissions.request(permissionsToRequest);
+  const currentPermissions = await onResponse(response);
+
+  console.log(`Current permissions:`, currentPermissions);
+}
+
+document.querySelector("#submit").addEventListener("click", requestPermissions);
 
 // Saves options to localStorage.
 document.getElementById("form").onsubmit = function () {
