@@ -2,15 +2,15 @@ Send to Redmine Browser Extensions/Plugins
 ==========================================
 
 This extension lets you immediately create an issue with a link to the current page attached to the body.
-This is incredibly useful to quickly create issues for a web app in development. Currently, the extension
-has only been developed for Chrome but a Firefox plugin is coming soon! 
+This is useful to quickly create issues from the current page, such as fora web app in development.
  
 Redmine 1.3+ compatible.
 
-This extension was developed by [Rami Sayar](http://ramisayar.com).
+This extension is a fork of the original developed by [Rami Sayar](http://ramisayar.com).
+It is updated for the WebExtensions v3 API, which allows to use it on current browsers (as of 2024).
 
-How to Install
---------------
+How to Install (Chrom.e.ium)
+----------------------------
 
 1. Clone or fork this repository.
 2. Go to Wrench Menu -> Tools -> Extensions.
@@ -19,6 +19,11 @@ How to Install
 5. Go to the Options page for the extension.
 6. Fill in the URL for your redmine install. Fill in the X-Redmine-API-Key which you can find under your "My account" page on the right.
 7. Enjoy!
+
+How to Install (Firefox)
+------------------------
+
+Install from https://addons.mozilla.org/.
 
 License
 -------
