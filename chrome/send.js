@@ -28,9 +28,10 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-function getTabsInfo(tabs) {
+function fillWithTabsInfo(tabs) {
   for (const tab of tabs) {
-    document.getElementById("description").innerText += "\n\n\n\n\"" + tab.title + "\":" + tab.url;
+    document.getElementById("description").innerText = tab.url;
+    document.getElementById("subject").value = tab.title;
   }
 }
 
@@ -38,7 +39,7 @@ function onError(error) {
   console.error(`Error: ${error}`);
 }
 
-chrome.tabs.query({active: true}).then(getTabsInfo, onError);
+chrome.tabs.query({active: true}).then(fillWithTabsInfo, onError);
 
 document.getElementById("form").onsubmit = function() {
 	var subject = document.getElementById("subject").value;
@@ -93,7 +94,7 @@ document.body.onload = function () {
 
 	var project_xhr = new XMLHttpRequest();
 	// Get the projects using the Redmine API Key.
-	project_xhr.open("GET", url + "/projects.json", true);
+	project_xhr.open("GET", url + "/projects.json?limit=100", true);
 	project_xhr.setRequestHeader("X-Redmine-API-Key", key);
 	project_xhr.onreadystatechange = function() {
 		if (project_xhr.readyState == 4) {

@@ -21,5 +21,11 @@
     ],
     "options_ui": {
         "page": "options.html"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "send-to-redmine@jle64.github.com",
+            "strict_min_version": "124.0"
+        }
     }
 }
