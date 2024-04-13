@@ -23,7 +23,7 @@ How to Install (Chrom.e.ium)
 How to Install (Firefox)
 ------------------------
 
-Install from https://addons.mozilla.org/.
+Install from https://addons.mozilla.org/firefox/addon/send-to-redmine/.
 
 License
 -------
