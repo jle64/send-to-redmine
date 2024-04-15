@@ -13,17 +13,21 @@ How to Install (Chrom.e.ium)
 ----------------------------
 
 1. Clone or fork this repository.
-2. Go to Wrench Menu -> Tools -> Extensions.
+2. Go to "Three dots menu" -> "Extensions" -> "Manage Extensions".
 3. Make sure "Developer mode" is checked on the top right corner.
-4. Click "Load unpacked extension" and navigate to the chrome folder in the repository.
-5. Go to the Options page for the extension.
-6. Fill in the URL for your redmine install. Fill in the X-Redmine-API-Key which you can find under your "My account" page on the right.
+4. Click "Load unpacked" and navigate to the chrome folder in the repository.
+5. Go to the "Options" page for the extension.
+6. Fill in the URL for your Redmine install. Fill in the X-Redmine-API-Key which you can find under your "My account" page on the right in Redmine.
 7. Enjoy!
 
 How to Install (Firefox)
 ------------------------
 
-Install from https://addons.mozilla.org/firefox/addon/send-to-redmine/.
+1. Install from https://addons.mozilla.org/firefox/addon/send-to-redmine/.
+2. Go to "Extensions and Themes", find the "Send to Redmine" extension, open the "Preferences" page from the three dots menu.
+3. Fill in the URL for your Redmine install. Fill in the X-Redmine-API-Key which you can find under your "My account" page on the right in Redmine.
+4. Grant the permissions that the extension asks for.
+5. Enjoy!
 
 License
 -------
